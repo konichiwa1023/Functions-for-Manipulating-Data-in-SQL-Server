@@ -1,0 +1,4 @@
+SELECT
+    -- Use CAST to convert the division result to an integer
+    CAST(total_votes/5.5 AS int) AS DividedVotes
+FROM voters;
