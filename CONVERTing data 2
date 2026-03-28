@@ -1,0 +1,6 @@
+SELECT 
+    company,
+    bean_origin,
+    -- Use a function to convert the rating to an integer
+    CONVERT(int, rating) AS rating
+FROM ratings;
