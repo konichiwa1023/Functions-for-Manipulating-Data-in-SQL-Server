@@ -1,0 +1,4 @@
+SELECT
+    email,
+    CONVERT(varchar, birthdate, 107) AS birthdate
+FROM voters;
