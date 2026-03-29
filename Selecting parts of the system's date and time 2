@@ -1,0 +1,3 @@
+SELECT 
+	CAST(SYSUTCDATETIME() AS time) AS HighPrecision,
+	CAST(GETUTCDATE() AS time) AS LowPrecision;
