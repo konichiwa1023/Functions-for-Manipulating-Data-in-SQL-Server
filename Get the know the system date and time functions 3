@@ -1,0 +1,2 @@
+SELECT 
+	SYSDATETIMEOFFSET() AS Timezone;
