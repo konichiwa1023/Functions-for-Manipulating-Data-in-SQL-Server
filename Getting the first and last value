@@ -1,0 +1,13 @@
+SELECT 
+    first_name + ' ' + last_name AS name,
+    country,
+    birthdate,
+    -- Retrieve the birthdate of the oldest voter per country (earliest birthdate)
+    FIRST_VALUE(birthdate) 
+        OVER (PARTITION BY country ORDER BY birthdate) AS oldest_voter,
+    -- Retrieve the birthdate of the youngest voter per country (latest birthdate)
+    LAST_VALUE(birthdate) 
+        OVER (PARTITION BY country ORDER BY birthdate 
+              ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING) AS youngest_voter
+FROM voters
+WHERE country IN ('Spain', 'USA');
