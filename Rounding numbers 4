@@ -1,0 +1,8 @@
+SELECT
+	rating,
+	CEILING(rating) AS round_up,
+	FLOOR(rating) AS round_down,
+	ROUND(rating, 1) AS round_onedec,
+	-- Round the rating value to two decimals
+	ROUND(rating, 2) AS round_twodec
+FROM ratings;
